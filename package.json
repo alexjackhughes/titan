@@ -1,0 +1,11 @@
+{
+  "name": "apollo",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.6",
+    "meteor-node-stubs": "^1.0.0"
+  }
+}
