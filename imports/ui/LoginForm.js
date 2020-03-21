@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import { Accounts } from 'meteor/accounts-base'
 import { withApollo } from 'react-apollo'
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
   login = e => {
     e.preventDefault()
     Meteor.loginWithPassword(this.email.value, this.password.value, error => {
       if (error) {
         console.log('error loggin in', error)
       }
-      //   if (!error) {
-      //     this.props.client.resetStore()
-      //   }
+      if (!error) {
+        this.props.client.resetStore()
+      }
     })
 
     console.log('logged in', Accounts.userId())
@@ -27,3 +27,5 @@ export default class LoginForm extends Component {
     )
   }
 }
+
+export default LoginForm
