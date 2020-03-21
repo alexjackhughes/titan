@@ -11,6 +11,7 @@ import LoginForm from './LoginForm'
 const App = ({ loading, refetch, resolutions }) => {
   if (loading) return null
 
+  console.log('woo', resolutions)
   return (
     <>
       {Accounts.userId() ? (
@@ -35,6 +36,7 @@ const Query = gql`
     resolutions {
       _id
       name
+      userId
     }
   }
 `

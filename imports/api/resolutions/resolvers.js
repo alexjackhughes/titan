@@ -1,8 +1,14 @@
 import Resolutions from './resolutions'
 
+/**
+ * Understanding the function parameters:
+ *
+ * - args: is the arguments passed to this method
+ * - context: is info about the current user
+ */
 export default {
   Query: {
-    resolutions() {
+    resolutions(obj, args, context) {
       return Resolutions.find({}).fetch({})
     },
     resolution(obj, { _id }, context) {
@@ -10,9 +16,10 @@ export default {
     },
   },
   Mutation: {
-    createResolution(obj, { name }, context) {
+    createResolution(obj, { name }, { userId }) {
       const id = Resolutions.insert({
         name,
+        userId,
       })
       return Resolutions.findOne(id)
     },

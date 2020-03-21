@@ -5,6 +5,7 @@
 type Resolution {
   _id: String!
   name: String!
+  userId: String!
 }
 
 type Query {
