@@ -9,8 +9,11 @@ type Resolution {
 
 type Query {
   resolutions: [Resolution]
+  resolution: Resolution
 }
 
 type Mutation {
   createResolution(name: String!): Resolution
+  updateResolution(_id: String!, name: String!): Resolution
+  deleteResolution(_id: String!): Resolution
 }

@@ -4,16 +4,11 @@ import { graphql } from 'react-apollo'
 
 class ResolutionForm extends React.Component {
   submitForm = () => {
-    this.props
-      .createResolution({
-        variables: {
-          name: this.name.value,
-        },
-      })
-      .then(() => {
-        this.props.refetch()
-      })
-      .catch(e => console.log(e))
+    this.props.createResolution({
+      variables: {
+        name: this.name.value,
+      },
+    })
   }
 
   render() {
@@ -36,4 +31,7 @@ const createResolution = gql`
 
 export default graphql(createResolution, {
   name: 'createResolution',
+  options: {
+    refetchQueries: ['resolutions'],
+  },
 })(ResolutionForm)
