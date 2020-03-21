@@ -4,7 +4,6 @@ import { graphql } from 'react-apollo'
 
 class ResolutionForm extends React.Component {
   submitForm = () => {
-    console.log('client: ', this.name.value)
     this.props
       .createResolution({
         variables: {

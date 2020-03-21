@@ -5,7 +5,7 @@ import merge from 'lodash/merge'
 import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql'
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
 
-//todo
+// Here we update the code
 // Here we define data models:
 const typeDefs = [ResolutionsSchema]
 
