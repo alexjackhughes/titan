@@ -4,7 +4,6 @@ import { graphql } from 'react-apollo'
 
 class DeleteItem extends React.Component {
   onDelete = () => {
-    console.log('woo')
     this.props.deleteResolution({
       variables: {
         _id: this.props._id,
@@ -13,11 +12,7 @@ class DeleteItem extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <span onClick={this.onDelete}>delete</span>
-      </div>
-    )
+    return <button onClick={this.onDelete}>delete</button>
   }
 }
 

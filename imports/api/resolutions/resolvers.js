@@ -11,7 +11,7 @@ export default {
   },
   Mutation: {
     createResolution(obj, { name }, context) {
-      Resolutions.insert({
+      const id = Resolutions.insert({
         name,
       })
       return Resolutions.findOne(id)
