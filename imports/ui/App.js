@@ -4,6 +4,8 @@ import { graphql } from 'react-apollo'
 import { Accounts } from 'meteor/accounts-base'
 import { withApollo } from 'react-apollo'
 
+import './App.scss'
+
 import ResolutionForm from './ResolutionForm'
 import ResolutionItem from './ResolutionItem'
 import RegisterForm from './RegisterForm'
@@ -14,7 +16,7 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
 
   return (
     <>
-      {user._id ? (
+      {user && user._id ? (
         <>
           <button
             onClick={() => {
@@ -22,7 +24,7 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
               client.resetStore()
             }}
           >
-            Logout
+            {`Logout`}
           </button>
           <ResolutionForm refetch={refetch} />
           {resolutions.map(({ name, _id }) => (
@@ -48,6 +50,7 @@ const Query = gql`
     }
     user {
       _id
+      email
     }
   }
 `
