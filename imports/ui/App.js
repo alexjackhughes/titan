@@ -19,6 +19,7 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
       {user && user._id ? (
         <>
           <button
+            className="button is-primary"
             onClick={() => {
               Meteor.logout()
               client.resetStore()
