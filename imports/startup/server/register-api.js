@@ -8,7 +8,6 @@ import UsersResolvers from '../../api/users/resolvers'
 import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql'
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
 
-// Here we update the codes shshs testing dsss sss
 // Here we define data models:
 const typeDefs = [UsersSchema, ResolutionsSchema]
 

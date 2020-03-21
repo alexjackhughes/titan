@@ -24,7 +24,6 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
           >
             Logout
           </button>
-          <h1>Hello World</h1>
           <ResolutionForm refetch={refetch} />
           {resolutions.map(({ name, _id }) => (
             <ResolutionItem name={name} _id={_id} key={_id} />
