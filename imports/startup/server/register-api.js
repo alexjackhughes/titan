@@ -5,33 +5,18 @@ import merge from 'lodash/merge'
 import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql'
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
 
-// Define the queries for application
-const Queries = `
-type Query {
-  hi: String
-  resolutions: [Resolution]
-}
-`
+//todo
+// Here we define data models:
+const typeDefs = [ResolutionsSchema]
 
-// Here we define the allowed queries + data models
-const typeDefs = [Queries, ResolutionsSchema]
+// Here we define the methods of the server:
+const resolvers = merge(ResolutionsResolvers)
 
-const testResolver = {
-  Query: {
-    hi() {
-      return 'Hello World'
-    },
-  },
-}
-
-// Here we define the methods of the server
-const resolvers = merge(testResolver, ResolutionsResolvers)
-
-// Set up the schema:
+// Creaye a schema from the models + methods:
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers,
 })
 
-// Create a server and attach the schema:
+// Create the server and attach the schema:
 createApolloServer({ schema })
