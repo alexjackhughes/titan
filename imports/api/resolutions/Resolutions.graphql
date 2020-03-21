@@ -11,6 +11,7 @@ type Resolution {
 type Query {
   resolutions: [Resolution]
   resolution: Resolution
+  user: User
 }
 
 type Mutation {

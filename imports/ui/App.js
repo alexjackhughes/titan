@@ -9,34 +9,33 @@ import ResolutionItem from './ResolutionItem'
 import RegisterForm from './RegisterForm'
 import LoginForm from './LoginForm'
 
-const App = ({ loading, refetch, resolutions, client }) => {
-  const [isLoggedIn, setLoggedIn] = React.useState(!!Accounts.userId())
-
-  if (loading) return null
+const App = ({ loading, refetch, resolutions, client, user }) => {
+  if (loading) return <p>Loading</p>
 
   return (
     <>
-      {isLoggedIn ? (
-        <button
-          onClick={() => {
-            Meteor.logout()
-            client.resetStore()
-            setLoggedIn(false)
-          }}
-        >
-          Logout
-        </button>
+      {user._id ? (
+        <>
+          <button
+            onClick={() => {
+              Meteor.logout()
+              client.resetStore()
+            }}
+          >
+            Logout
+          </button>
+          <h1>Hello World</h1>
+          <ResolutionForm refetch={refetch} />
+          {resolutions.map(({ name, _id }) => (
+            <ResolutionItem name={name} _id={_id} key={_id} />
+          ))}
+        </>
       ) : (
         <>
-          <RegisterForm client={client} setLoggedIn={setLoggedIn} />
-          <LoginForm client={client} setLoggedIn={setLoggedIn} />
+          <RegisterForm client={client} />
+          <LoginForm client={client} />
         </>
       )}
-      <h1>Hello World</h1>
-      <ResolutionForm refetch={refetch} />
-      {resolutions.map(({ name, _id }) => (
-        <ResolutionItem name={name} _id={_id} key={_id} />
-      ))}
     </>
   )
 }
@@ -47,6 +46,9 @@ const Query = gql`
       _id
       name
       userId
+    }
+    user {
+      _id
     }
   }
 `

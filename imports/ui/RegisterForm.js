@@ -12,7 +12,6 @@ class RegisterForm extends Component {
       error => {
         if (!error) {
           this.props.client.resetStore()
-          this.props.setLoggedIn(true)
         }
       }
     )
