@@ -9,6 +9,7 @@ class ResolutionForm extends React.Component {
         name: this.name.value,
       },
     })
+    this.name.value = ''
   }
 
   render() {

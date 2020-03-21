@@ -9,11 +9,15 @@ import Resolutions from './resolutions'
 export default {
   Query: {
     resolutions(obj, args, { userId }) {
+      if (!userId) return []
+
       return Resolutions.find({
         userId,
       }).fetch({})
     },
     resolution(obj, { _id }, context) {
+      if (!userId) return []
+
       return Resolutions.findOne(_id)
     },
   },

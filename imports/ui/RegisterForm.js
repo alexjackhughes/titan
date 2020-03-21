@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Accounts } from 'meteor/accounts-base'
-import { withApollo } from 'react-apollo'
 
 class RegisterForm extends Component {
   registerUser = e => {
@@ -13,8 +12,8 @@ class RegisterForm extends Component {
       error => {
         if (!error) {
           this.props.client.resetStore()
+          this.props.setLoggedIn(true)
         }
-        console.log(error)
       }
     )
   }

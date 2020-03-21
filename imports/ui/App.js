@@ -10,23 +10,26 @@ import RegisterForm from './RegisterForm'
 import LoginForm from './LoginForm'
 
 const App = ({ loading, refetch, resolutions, client }) => {
+  const [isLoggedIn, setLoggedIn] = React.useState(!!Accounts.userId())
+
   if (loading) return null
 
   return (
     <>
-      {!!Accounts.userId() ? (
+      {isLoggedIn ? (
         <button
           onClick={() => {
             Meteor.logout()
             client.resetStore()
+            setLoggedIn(false)
           }}
         >
           Logout
         </button>
       ) : (
         <>
-          <RegisterForm client={client} />
-          <LoginForm client={client} />
+          <RegisterForm client={client} setLoggedIn={setLoggedIn} />
+          <LoginForm client={client} setLoggedIn={setLoggedIn} />
         </>
       )}
       <h1>Hello World</h1>
