@@ -11,7 +11,7 @@ import UsersResolvers from '../../api/users/resolvers'
 import ResolutionsSchema from '../../api/resolutions/Resolution.graphql'
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
 
-// todo sswww
+// todo sswww sxs
 // Here we define data models:
 const typeDefs = [GoalsSchema, UsersSchema, ResolutionsSchema]
 

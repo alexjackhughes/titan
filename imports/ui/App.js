@@ -30,9 +30,9 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
             {`Logout`}
           </button>
           <ResolutionForm refetch={refetch} />
-          {resolutions.map(({ name, _id, goals }, index) => (
+          {resolutions.map(({ name, _id, goals, completed }, index) => (
             <div key={index}>
-              <ResolutionItem name={name} _id={_id} key={_id} />
+              <ResolutionItem name={name} _id={_id} completed={completed} key={_id} />
               <GoalForm resolutionId={_id} key={`${_id}-goals`} />
               {goals.map((goal, index) => (
                 <GoalItem key={index} goal={goal} index={index} />
@@ -61,6 +61,7 @@ const Query = gql`
         name
         completed
       }
+      completed
     }
     user {
       _id

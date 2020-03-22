@@ -12,7 +12,9 @@ class GoalItem extends React.Component {
           checked={this.props.goal.completed}
           onChange={() => this.props.toggleGoal({ variables: { _id: this.props.goal._id } })}
         />
-        <span> {this.props.goal.name}</span>
+        <span style={{ textDecoration: this.props.goal.completed ? 'strike-through' : 'none' }}>
+          {this.props.goal.name}
+        </span>
       </div>
     )
   }

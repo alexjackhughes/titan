@@ -37,6 +37,7 @@ class ResolutionItem extends React.Component {
       <div>
         <input type="text" value={this.state.name} ref={input => (this.input = input)} onChange={this.onChange} />
         <DeleteItem _id={this.props._id} />
+        <span>{this.props.completed ? 'done' : 'not done'}</span>
       </div>
     )
   }
