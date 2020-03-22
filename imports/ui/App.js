@@ -10,6 +10,8 @@ import ResolutionForm from './ResolutionForm'
 import ResolutionItem from './ResolutionItem'
 import RegisterForm from './RegisterForm'
 import LoginForm from './LoginForm'
+import GoalForm from './GoalForm'
+import GoalItem from './GoalItem'
 
 const App = ({ loading, refetch, resolutions, client, user }) => {
   if (loading) return <p>Loading</p>
@@ -28,8 +30,14 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
             {`Logout`}
           </button>
           <ResolutionForm refetch={refetch} />
-          {resolutions.map(({ name, _id }) => (
-            <ResolutionItem name={name} _id={_id} key={_id} />
+          {resolutions.map(({ name, _id, goals }, index) => (
+            <div key={index}>
+              <ResolutionItem name={name} _id={_id} key={_id} />
+              <GoalForm resolutionId={_id} key={`${_id}-goals`} />
+              {goals.map((goal, index) => (
+                <GoalItem key={index} goal={goal} index={index} />
+              ))}
+            </div>
           ))}
         </>
       ) : (
@@ -48,6 +56,11 @@ const Query = gql`
       _id
       name
       userId
+      goals {
+        _id
+        name
+        completed
+      }
     }
     user {
       _id

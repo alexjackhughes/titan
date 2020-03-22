@@ -15,7 +15,7 @@ class ResolutionForm extends React.Component {
   render() {
     return (
       <div>
-        <input type="text" ref={input => (this.name = input)} />
+        <input type="text" placeholder="Create resolution" ref={input => (this.name = input)} />
         <button onClick={this.submitForm}>Submit</button>
       </div>
     )

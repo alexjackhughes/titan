@@ -1,4 +1,5 @@
 import Resolutions from './resolutions'
+import Goals from '../goals/goals'
 
 /**
  * Understanding the function parameters:
@@ -40,5 +41,8 @@ export default {
       Resolutions.remove(_id)
       return oldResolution
     },
+  },
+  Resolution: {
+    goals: resolution => Goals.find({ resolutionId: resolution._id }).fetch(),
   },
 }
