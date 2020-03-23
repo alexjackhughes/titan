@@ -11,12 +11,14 @@ import LoginForm from './LoginForm'
 import GoalForm from './GoalForm'
 import GoalItem from './GoalItem'
 
+import { Layout } from './Components/Layout'
+
 const App = ({ loading, refetch, resolutions, client, user }) => {
   // in slow apps, this could load loading screen
   if (loading) return null
 
   return (
-    <>
+    <Layout>
       {user && user._id ? (
         <>
           <button
@@ -45,7 +47,7 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
           <LoginForm client={client} />
         </>
       )}
-    </>
+    </Layout>
   )
 }
 

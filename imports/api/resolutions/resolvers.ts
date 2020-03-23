@@ -27,6 +27,14 @@ export default {
 
       return Resolutions.findOne(_id)
     },
+    searchResolution(obj, { key, value }, { userId }) {
+      if (!userId) return []
+
+      return Resolutions.find({
+        [key]: value,
+        userId,
+      }).fetch({})
+    },
   },
   Mutation: {
     createResolution(obj, { name }, { userId }) {

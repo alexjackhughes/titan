@@ -9,6 +9,7 @@ type Resolution {
 type Query {
   resolutions: [Resolution]
   resolution: Resolution
+  searchResolution(key: String!, value: String!): [Resolution]
 }
 
 type Mutation {
