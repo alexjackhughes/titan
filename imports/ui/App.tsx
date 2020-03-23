@@ -4,8 +4,6 @@ import { graphql } from 'react-apollo'
 import { Accounts } from 'meteor/accounts-base'
 import { withApollo } from 'react-apollo'
 
-import './App.scss'
-
 import ResolutionForm from './ResolutionForm'
 import ResolutionItem from './ResolutionItem'
 import RegisterForm from './RegisterForm'

@@ -7,7 +7,9 @@ import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-import App from '../../ui/App'
+import './main.scss'
+
+import App from '../imports/ui/App'
 
 const cache = new InMemoryCache()
 
@@ -16,6 +18,7 @@ const htttpLink = new HttpLink({
 })
 
 const authLink = new ApolloLink((operation, forward) => {
+  // @ts-ignore
   const token = Accounts._storedLoginToken()
 
   operation.setContext(() => ({
@@ -32,7 +35,7 @@ const client = new ApolloClient({
   cache,
 })
 
-const ApolloApp = () => (
+export const ApolloApp = () => (
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>

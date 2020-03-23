@@ -1,6 +1,8 @@
-# Apollo
+# Titan
 
-This is me playing around with Apollo + Meteor + React to build full-stack applications and to take over the 🌍.
+Titan is an opinionated full-stack web application framework.
+
+It attempts to incorporate many of the latest web technologies, whilst handling all the boring bits of building applications for you - so you can focus on, you know, building a startup.
 
 It consists of three main projects:
 
@@ -22,3 +24,9 @@ Once you have cloned the repo, follow these steps to start a local development i
 2. There is no step 2 - you're done! 🎉
    - Visit the website: [http://localhost:3000/](http://localhost:3000/)
    - Write GraphQL queries: [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
+
+## Deployment
+
+Once you’ve built and tested your Titan application, you need to put it online to show it to the world. Titan uses Meteor as it's base framework, so for deployment you can follow along with their guide:
+
+[Meteor Deployment Guide](https://guide.meteor.com/deployment.html)
