@@ -4,15 +4,23 @@
   "scripts": {
     "start": "meteor run",
     "lint": "eslint  './**/*.{ts,tsx}'",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addons": "^5.3.17",
+    "@storybook/react": "^5.3.17",
     "@types/jest": "^25.1.4",
     "@types/meteor": "^1.4.40",
     "@types/mocha": "^5.2.7",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
