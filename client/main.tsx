@@ -6,10 +6,12 @@ import { ApolloLink, from } from 'apollo-link'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
-
-import './main.scss'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import App from '../imports/ui/App'
+
+import './main.scss'
+import Routes from '../imports/ui/Routes'
 
 const cache = new InMemoryCache()
 
@@ -37,7 +39,9 @@ const client = new ApolloClient({
 
 export const ApolloApp = () => (
   <ApolloProvider client={client}>
-    <App />
+    <Router>
+      <Routes />
+    </Router>
   </ApolloProvider>
 )
 
