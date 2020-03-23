@@ -25,6 +25,33 @@ Once you have cloned the repo, follow these steps to start a local development i
    - Visit the website: [http://localhost:3000/](http://localhost:3000/)
    - Write GraphQL queries: [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
 
+## The Demo
+
+To give you a brief understanding of the actual demo application, it outlines a "resolutions" app, where you can:
+
+- Login via a Magic Link
+- Create and track personal goals
+- View individual goals
+
+Only logged in users will be able to see their goals, and logged in users can only see their own goals.
+
+This should give you just enough code to figure out how to implement
+
+## Technologies
+
+This is an opionated stack using technologies I've used in the past to great success, including:
+
+### Application
+
+- **Frontend**: Our frontend is build with React + Apollo-Client + TypeScript
+- **Server**: Our server is built with GraphQL + Apollo + Meteor + TypeScript
+
+### Testing
+
+- **Storybook**: For visual component creation and testing
+- **Jest**: As the base testing library
+- **react-testing-library**: For component-tree testing
+
 ## Deployment
 
 Once you’ve built and tested your Titan application, you need to put it online to show it to the world. Titan uses Meteor as it's base framework, so for deployment you can follow along with their guide:
