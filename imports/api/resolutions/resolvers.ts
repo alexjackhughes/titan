@@ -22,7 +22,7 @@ export default {
         userId,
       }).fetch({})
     },
-    resolution(obj, { _id }, context) {
+    resolution(obj, { _id }, { userId }) {
       if (!userId) return []
 
       return Resolutions.findOne(_id)
@@ -45,14 +45,14 @@ export default {
       })
       return Resolutions.findOne(id)
     },
-    updateResolution(obj, { _id, name }, context) {
+    updateResolution(obj, { _id, name }, { userId }) {
       isUser(userId)
       Resolutions.update(_id, {
         name,
       })
       return Resolutions.findOne(_id)
     },
-    deleteResolution(obj, { _id }, context) {
+    deleteResolution(obj, { _id }, { userId }) {
       isUser(userId)
       const oldResolution = Resolutions.findOne(_id)
       Resolutions.remove(_id)
