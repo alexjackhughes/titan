@@ -14,7 +14,8 @@ import GoalForm from './GoalForm'
 import GoalItem from './GoalItem'
 
 const App = ({ loading, refetch, resolutions, client, user }) => {
-  if (loading) return <p>Loading</p>
+  // in slow apps, this could load loading screen
+  if (loading) return null
 
   return (
     <>
