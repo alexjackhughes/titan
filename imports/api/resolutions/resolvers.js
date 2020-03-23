@@ -1,6 +1,12 @@
 import Resolutions from './resolutions'
 import Goals from '../goals/goals'
 
+const isUser = userId => {
+  if (!userId) {
+    throw new Error('Unauthorized user')
+  }
+}
+
 /**
  * Understanding the function parameters:
  *
@@ -24,6 +30,7 @@ export default {
   },
   Mutation: {
     createResolution(obj, { name }, { userId }) {
+      isUser(userId)
       const id = Resolutions.insert({
         name,
         userId,
@@ -31,12 +38,14 @@ export default {
       return Resolutions.findOne(id)
     },
     updateResolution(obj, { _id, name }, context) {
+      isUser(userId)
       Resolutions.update(_id, {
         name,
       })
       return Resolutions.findOne(_id)
     },
     deleteResolution(obj, { _id }, context) {
+      isUser(userId)
       const oldResolution = Resolutions.findOne(_id)
       Resolutions.remove(_id)
       return oldResolution
