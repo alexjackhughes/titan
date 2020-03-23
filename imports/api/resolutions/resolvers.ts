@@ -1,5 +1,4 @@
 import Resolutions from './resolutions'
-import Goals from '../goals/goals'
 
 const isUser = userId => {
   if (!userId) {
@@ -60,10 +59,6 @@ export default {
     },
   },
   Resolution: {
-    goals: resolution => Goals.find({ resolutionId: resolution._id }).fetch(),
-    completed: resolution => {
-      const goals = Goals.find({ resolutionId: resolution._id, completed: false }).fetch()
-      return goals.length > 0 ? false : true
-    },
+    completed: resolution => true,
   },
 }
