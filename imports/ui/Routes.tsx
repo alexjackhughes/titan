@@ -4,9 +4,10 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import { withApollo } from 'react-apollo'
 
-import Resolutions from '../Containers/Resolutions'
-import Login from '../Containers/Login'
-import { Layout } from '../Components/Layout'
+import Resolutions from './Containers/Resolutions'
+
+import { AuthenticatedRoute } from '../auth/AuthenticatedRoute'
+import { Layout } from './Components/Layout'
 
 interface Props {
   loading: boolean
@@ -20,17 +21,20 @@ const Routes: React.FC<Props> = ({ loading, user, client }) => {
   // in slow apps, this could load a loading screen
   if (loading) return null
 
+  const isUser = user && !!user._id
+
   return (
     <Switch>
       <Layout
-        isUser={user && !!user._id}
+        isUser={isUser}
         logOut={() => {
           Meteor.logout()
           client.resetStore()
         }}
       >
-        <Route exact path="/" component={Resolutions} />
-        <Route exact path="/login" component={Login} />
+        <AuthenticatedRoute isUser={isUser} isAuthenticatedRoute={true}>
+          <Route exact path="/" component={Resolutions} />
+        </AuthenticatedRoute>
       </Layout>
     </Switch>
   )

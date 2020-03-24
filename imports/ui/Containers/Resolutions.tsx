@@ -5,8 +5,8 @@ import { Accounts } from 'meteor/accounts-base'
 import { withApollo } from 'react-apollo'
 import { compose } from 'recompose'
 
-import { ResolutionForm } from '../Components/ResolutionForm'
-import { ResolutionItem } from '../Components/ResolutionItem'
+import { ResolutionForm } from '../Components/Resolutions/ResolutionForm'
+import { ResolutionItem } from '../Components/Resolutions/ResolutionItem'
 
 const Resolutions = ({ loading, refetch, createResolution, deleteResolution, completeResolution, resolutions }) => {
   if (loading) return null

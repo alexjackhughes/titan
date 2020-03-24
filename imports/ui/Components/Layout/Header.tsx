@@ -55,7 +55,7 @@ export const Header: React.FC<Props> = ({ isUser, logOut }) => {
           <div className="navbar-end is-hidden-touch">
             <div className="navbar-item">
               <div className="buttons">
-                <Link className="button is-primary" to="/login">
+                <Link className="button is-primary" to="/">
                   <strong>Sign In</strong>
                 </Link>
               </div>
