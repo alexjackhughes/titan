@@ -5,8 +5,8 @@ import { Accounts } from 'meteor/accounts-base'
 import { withApollo } from 'react-apollo'
 import { useHistory } from 'react-router-dom'
 
-import LoginForm from '../LoginForm'
-import RegisterForm from '../RegisterForm'
+import LoginForm from '../Components/LoginForm'
+import RegisterForm from '../Components/RegisterForm'
 
 interface Props {
   loading: boolean
