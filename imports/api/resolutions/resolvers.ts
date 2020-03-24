@@ -40,9 +40,23 @@ export default {
       isUser(userId)
       const id = Resolutions.insert({
         name,
+        completed: false,
         userId,
       })
       return Resolutions.findOne(id)
+    },
+    completeResolution(obj, { _id, completed }, { userId }) {
+      isUser(userId)
+
+      const item = Resolutions.findOne(_id)
+
+      Resolutions.update(_id, {
+        name: item.name,
+        userId: item.userId,
+        completed,
+      })
+
+      return Resolutions.findOne(_id)
     },
     updateResolution(obj, { _id, name }, { userId }) {
       isUser(userId)
@@ -57,8 +71,5 @@ export default {
       Resolutions.remove(_id)
       return oldResolution
     },
-  },
-  Resolution: {
-    completed: resolution => true,
   },
 }

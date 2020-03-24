@@ -8,8 +8,7 @@ import { compose } from 'recompose'
 import { ResolutionForm } from '../Components/ResolutionForm'
 import { ResolutionItem } from '../Components/ResolutionItem'
 
-const Resolutions = ({ loading, refetch, createResolution, resolutions }) => {
-  // in slow apps, this could load a loading screen
+const Resolutions = ({ loading, refetch, createResolution, deleteResolution, completeResolution, resolutions }) => {
   if (loading) return null
 
   const submitForm = (value: string) => {
@@ -20,11 +19,35 @@ const Resolutions = ({ loading, refetch, createResolution, resolutions }) => {
     })
   }
 
+  const completeGoal = (_id: string, completed: boolean) => {
+    completeResolution({
+      variables: {
+        _id,
+        completed,
+      },
+    })
+  }
+
+  const deleteGoal = (_id: string) => {
+    deleteResolution({
+      variables: {
+        _id: _id,
+      },
+    })
+  }
+
   return (
     <>
       <ResolutionForm onClick={submitForm} />
       {resolutions.map(({ name, _id, completed }) => (
-        <ResolutionItem key={_id} _id={_id} name={name} completed={completed} onClick={id => {}} onDelete={id => {}} />
+        <ResolutionItem
+          key={_id}
+          _id={_id}
+          name={name}
+          completed={completed}
+          onClick={completeGoal}
+          onDelete={deleteGoal}
+        />
       ))}
     </>
   )
@@ -52,6 +75,22 @@ const createResolution = gql`
     }
   }
 `
+const completeResolution = gql`
+  mutation completeResolution($_id: String!, $completed: Boolean!) {
+    completeResolution(_id: $_id, completed: $completed) {
+      _id
+      completed
+    }
+  }
+`
+
+const deleteResolution = gql`
+  mutation deleteResolution($_id: String!) {
+    deleteResolution(_id: $_id) {
+      _id
+    }
+  }
+`
 
 export default compose(
   graphql(Query, {
@@ -61,6 +100,18 @@ export default compose(
   }),
   graphql(createResolution, {
     name: 'createResolution',
+    options: {
+      refetchQueries: ['resolutions'],
+    },
+  }),
+  graphql(deleteResolution, {
+    name: 'deleteResolution',
+    options: {
+      refetchQueries: ['resolutions'],
+    },
+  }),
+  graphql(completeResolution, {
+    name: 'completeResolution',
     options: {
       refetchQueries: ['resolutions'],
     },
