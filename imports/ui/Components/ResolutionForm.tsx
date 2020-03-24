@@ -1,28 +1,31 @@
 import React from 'react'
 
 interface Props {
-  onSubmit: (value: String) => void
+  onClick: (value: String) => void
 }
-export const ResolutionForm: React.FC<Props> = ({ onSubmit }) => {
+
+export const ResolutionForm: React.FC<Props> = ({ onClick }) => {
   const [value, setValue] = React.useState('')
 
   return (
     <>
-      <div className="field">
+      <div className="field has-margin-top has-addons is-fullwidth">
         <div className="control has-icons-left has-icons-right">
           <input
-            className="input is-success"
+            className="input"
             type="text"
-            placeholder="Add resolution"
+            placeholder="Learn Spanish..."
             onChange={e => setValue(e.target.value)}
             value={value}
           />
           <span className="icon is-small is-left">
-            <i className="fas fa-user"></i>
+            <i className="fas fa-plus"></i>
           </span>
-          <span className="icon is-small is-right" onClick={() => onsubmit(value)}>
-            <i className="fas fa-check"></i>
-          </span>
+        </div>
+        <div className="control">
+          <a className="button is-primary" onClick={() => onClick(value)}>
+            Add Goal
+          </a>
         </div>
       </div>
     </>

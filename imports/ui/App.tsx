@@ -17,26 +17,10 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
 
   return (
     <>
-      {user && user._id ? (
-        <>
-          <ResolutionForm refetch={refetch} />
-          {resolutions.map(({ name, _id, completed }) => (
-            <ResolutionItem
-              key={_id}
-              _id={_id}
-              name={name}
-              completed={completed}
-              onClick={id => {}}
-              onDelete={id => {}}
-            />
-          ))}
-        </>
-      ) : (
-        <>
-          <RegisterForm client={client} />
-          <LoginForm client={client} />
-        </>
-      )}
+      <ResolutionForm refetch={refetch} />
+      {resolutions.map(({ name, _id, completed }) => (
+        <ResolutionItem key={_id} _id={_id} name={name} completed={completed} onClick={id => {}} onDelete={id => {}} />
+      ))}
     </>
   )
 }

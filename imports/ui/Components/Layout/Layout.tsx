@@ -4,12 +4,15 @@ import { Footer } from './Footer'
 
 interface Props {
   isUser: boolean
+  logOut: () => void
 }
 
-export const Layout: React.FC<Props> = ({ children, isUser }) => (
+export const Layout: React.FC<Props> = ({ children, isUser, logOut }) => (
   <>
-    <Header isUser={isUser} />
-    <div className="container">{children}</div>
+    <Header isUser={isUser} logOut={logOut} />
+    <div className="section">
+      <div className="container">{children}</div>
+    </div>
     <Footer />
   </>
 )

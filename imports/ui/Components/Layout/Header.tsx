@@ -4,9 +4,10 @@ import { Accounts } from 'meteor/accounts-base'
 
 interface Props {
   isUser: boolean
+  logOut: () => void
 }
 
-export const Header: React.FC<Props> = ({ isUser }) => {
+export const Header: React.FC<Props> = ({ isUser, logOut }) => {
   const [isActive, setIsActive] = useState(false)
 
   return (
@@ -43,13 +44,7 @@ export const Header: React.FC<Props> = ({ isUser }) => {
             <div className="navbar-end is-hidden-touch">
               <div className="navbar-item">
                 <div className="buttons">
-                  <a
-                    className="button is-primary"
-                    onClick={() => {
-                      Meteor.logout()
-                      // May need to do client reset store here
-                    }}
-                  >
+                  <a className="button is-primary" onClick={logOut}>
                     <strong>Sign Out</strong>
                   </a>
                 </div>
@@ -79,13 +74,7 @@ export const Header: React.FC<Props> = ({ isUser }) => {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    className="has-text-weight-bold is-size-2-mobile"
-                    onClick={() => {
-                      Meteor.logout()
-                      // May need to do client reset store here
-                    }}
-                  >
+                  <a className="has-text-weight-bold is-size-2-mobile" onClick={logOut}>
                     LOGOUT
                   </a>
                 </li>

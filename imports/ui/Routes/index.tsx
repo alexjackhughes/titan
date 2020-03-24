@@ -2,11 +2,9 @@ import * as React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
-import { Accounts } from 'meteor/accounts-base'
 import { withApollo } from 'react-apollo'
-import { useHistory } from 'react-router-dom'
 
-import App from '../App'
+import Resolutions from '../Containers/Resolutions'
 import Login from '../Containers/Login'
 import { Layout } from '../Components/Layout'
 
@@ -15,18 +13,23 @@ interface Props {
   user: {
     _id: string
   }
+  client: any
 }
 
-const Routes: React.FC<Props> = ({ loading, user }) => {
-  //const history = useHistory()
-
+const Routes: React.FC<Props> = ({ loading, user, client }) => {
   // in slow apps, this could load a loading screen
   if (loading) return null
 
   return (
     <Switch>
-      <Layout isUser={user && !!user._id}>
-        <Route exact path="/" component={App} />
+      <Layout
+        isUser={user && !!user._id}
+        logOut={() => {
+          Meteor.logout()
+          client.resetStore()
+        }}
+      >
+        <Route exact path="/" component={Resolutions} />
         <Route exact path="/login" component={Login} />
       </Layout>
     </Switch>
