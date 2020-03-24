@@ -11,14 +11,12 @@ import LoginForm from './LoginForm'
 
 import { ResolutionItem } from './Components/ResolutionItem'
 
-import { Layout } from './Components/Layout'
-
 const App = ({ loading, refetch, resolutions, client, user }) => {
   // in slow apps, this could load a loading screen
   if (loading) return null
 
   return (
-    <Layout>
+    <>
       {user && user._id ? (
         <>
           <ResolutionForm refetch={refetch} />
@@ -39,7 +37,7 @@ const App = ({ loading, refetch, resolutions, client, user }) => {
           <LoginForm client={client} />
         </>
       )}
-    </Layout>
+    </>
   )
 }
 
