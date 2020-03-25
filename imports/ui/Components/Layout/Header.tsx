@@ -12,7 +12,7 @@ export const Header: React.FC<Props> = ({ isUser, logOut }) => {
 
   return (
     <>
-      <div className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
             <img
@@ -34,15 +34,22 @@ export const Header: React.FC<Props> = ({ isUser, logOut }) => {
         </div>
         {isUser ? (
           <>
-            <div className="navbar-menu is-hidden-touch">
+            <div className={`navbar-menu ${isActive && 'is-active'}`}>
               <div className="navbar-start">
                 <Link className="navbar-item" to="/">
                   Goals
                 </Link>
               </div>
             </div>
-            <div className="navbar-end is-hidden-touch">
-              <div className="navbar-item">
+            <div className={`navbar-menu ${isActive && 'is-active'} is-hidden-desktop`}>
+              <div className="navbar-start">
+                <a className="navbar-item" onClick={logOut}>
+                  Sign out
+                </a>
+              </div>
+            </div>
+            <div className="navbar-end">
+              <div className="navbar-item is-hidden-touch">
                 <div className="buttons">
                   <a className="button is-primary" onClick={logOut}>
                     <strong>Sign Out</strong>
@@ -63,32 +70,6 @@ export const Header: React.FC<Props> = ({ isUser, logOut }) => {
           </div>
         )}
       </div>
-      {isActive && (
-        <aside className="menu has-text-right is-hidden-desktop">
-          <ul className="menu-list">
-            {isUser ? (
-              <>
-                <li>
-                  <Link className="has-text-weight-bold is-size-2-mobile" to="/">
-                    GOALS
-                  </Link>
-                </li>
-                <li>
-                  <a className="has-text-weight-bold is-size-2-mobile" onClick={logOut}>
-                    LOGOUT
-                  </a>
-                </li>
-              </>
-            ) : (
-              <li>
-                <Link className="has-text-weight-bold is-size-2-mobile" to="/login">
-                  LOGIN
-                </Link>
-              </li>
-            )}
-          </ul>
-        </aside>
-      )}
     </>
   )
 }

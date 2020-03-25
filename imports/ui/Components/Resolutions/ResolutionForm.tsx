@@ -23,7 +23,13 @@ export const ResolutionForm: React.FC<Props> = ({ onClick }) => {
           </span>
         </div>
         <div className="control">
-          <a className="button is-primary" onClick={() => onClick(value)}>
+          <a
+            className="button is-primary"
+            onClick={() => {
+              onClick(value)
+              setValue('')
+            }}
+          >
             Add Goal
           </a>
         </div>

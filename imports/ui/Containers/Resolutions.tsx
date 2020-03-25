@@ -1,7 +1,6 @@
 import * as React from 'react'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
-import { Accounts } from 'meteor/accounts-base'
 import { withApollo } from 'react-apollo'
 import { compose } from 'recompose'
 
