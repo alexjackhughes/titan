@@ -38,7 +38,7 @@
         "allow": ["_id", "_ensureIndex"]
       }
     ],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["off", "never"],
     "curly": ["error", "multi-or-nest", "consistent"],
     "no-param-reassign": [
       "error",
@@ -61,6 +61,7 @@
         "avoidQuotes": false
       }
     ],
+    "semi": "off",
     "arrow-body-style": [
       "error",
       "as-needed",
