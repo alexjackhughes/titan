@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Accounts } from 'meteor/accounts-base'
 
 interface Props {
   isUser: boolean

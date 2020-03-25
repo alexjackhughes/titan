@@ -73,6 +73,7 @@ srp@1.0.12
 standard-minifier-css@1.6.0
 standard-minifier-js@2.6.0
 static-html@1.2.2
+swydo:graphql@0.4.0
 templating-tools@1.1.2
 tracker@1.2.0
 typescript@3.7.5

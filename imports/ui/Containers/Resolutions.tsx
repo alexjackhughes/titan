@@ -1,13 +1,15 @@
 import * as React from 'react'
 import gql from 'graphql-tag'
-import { graphql } from 'react-apollo'
-import { withApollo } from 'react-apollo'
+import { graphql, withApollo } from 'react-apollo'
+
 import { compose } from 'recompose'
 
 import { ResolutionForm } from '../Components/Resolutions/ResolutionForm'
 import { ResolutionItem } from '../Components/Resolutions/ResolutionItem'
 
-const Resolutions = ({ loading, refetch, createResolution, deleteResolution, completeResolution, resolutions }) => {
+const Resolutions = ({
+  loading, refetch, createResolution, deleteResolution, completeResolution, resolutions
+}) => {
   if (loading) return null
 
   const submitForm = (value: string) => {
@@ -30,7 +32,7 @@ const Resolutions = ({ loading, refetch, createResolution, deleteResolution, com
   const deleteGoal = (_id: string) => {
     deleteResolution({
       variables: {
-        _id: _id,
+        _id,
       },
     })
   }
@@ -93,9 +95,11 @@ const deleteResolution = gql`
 
 export default compose(
   graphql(Query, {
-    props: ({ data }) => ({
-      ...data,
-    }),
+    props: ({ data }) => {
+      return {
+        ...data,
+      }
+    },
   }),
   graphql(createResolution, {
     name: 'createResolution',

@@ -15,11 +15,11 @@ export const ResolutionForm: React.FC<Props> = ({ onClick }) => {
             className="input"
             type="text"
             placeholder="Learn Spanish..."
-            onChange={e => setValue(e.target.value)}
+            onChange={(e) => setValue(e.target.value)}
             value={value}
           />
           <span className="icon is-small is-left">
-            <i className="fas fa-plus"></i>
+            <i className="fas fa-plus" />
           </span>
         </div>
         <div className="control">

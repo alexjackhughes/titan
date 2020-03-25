@@ -9,6 +9,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import './main.scss'
+
 import Routes from '../imports/ui/Routes'
 
 const cache = new InMemoryCache()
@@ -21,11 +22,13 @@ const authLink = new ApolloLink((operation, forward) => {
   // @ts-ignore
   const token = Accounts._storedLoginToken()
 
-  operation.setContext(() => ({
-    headers: {
-      'meteor-login-token': token,
-    },
-  }))
+  operation.setContext(() => {
+    return {
+      headers: {
+        'meteor-login-token': token,
+      },
+    }
+  })
 
   return forward(operation)
 })

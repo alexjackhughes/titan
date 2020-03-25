@@ -9,11 +9,13 @@ import Resolutions from './Containers/Resolutions'
 import { AuthenticatedRoute } from '../auth/AuthenticatedRoute'
 import { Layout } from './Components/Layout'
 
+interface User {
+  _id: string
+}
+
 interface Props {
   loading: boolean
-  user: {
-    _id: string
-  }
+  user: User
   client: any
 }
 

@@ -21,3 +21,4 @@ apollo@2.0.0                        # Adds Apollo server
 
 accounts-password@1.6.0
 fourseven:scss
+swydo:graphql

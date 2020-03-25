@@ -8,3 +8,4 @@ build/
 packages/
 .git/
 .gitignore
+./types.d.ts

@@ -35,9 +35,10 @@
     "no-underscore-dangle": [
       "error",
       {
-        "allow": ["_id", "_ensureIndex"]
+        "allow": ["_id", "_ensureIndex", "_storedLoginToken"]
       }
     ],
+    "no-undef": ["off"],
     "comma-dangle": ["off", "never"],
     "curly": ["error", "multi-or-nest", "consistent"],
     "no-param-reassign": [

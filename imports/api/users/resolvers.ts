@@ -5,6 +5,6 @@ export default {
     },
   },
   User: {
-    email: user => user.emails && user.emails[0].address,
+    email: (user) => user.emails && user.emails[0].address,
   },
 }
