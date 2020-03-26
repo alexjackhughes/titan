@@ -24,20 +24,20 @@ It gives you the latest tools, like:
 - The latest React features
 - Airbnb linting
 - Bulma theming set-up
-- Jest for unit tests
+- Jest and `react-testing-library` for testing
 - Storybook for component testing & visualisation
 
 It consists of three main projects:
 
-- `/client`: Where our client-side code is imported.
-- `/imports`:
-  - `/api`: Where all our Apollo code is written.
-  - `/startup`: where we initialise both the server and client side.
-  - `/ui`: Where we write our React code.
-- `/server`: Where our server-side code is imported.
+- `/client` Where our frontend is set-up.
+- `/imports`
+  - `/api` Where all our Apollo code is written.
+  - `/auth` You can mainly ignore this folder, it just sets up the magic link.
+  - `/ui` Where we write our React code.
+- `/server` Where our server is set-up.
 
-- `/meteor`: Which is boring meteor set-up.
-- `/node_modules`: Which are exciting packages.
+- `/meteor`: Boring meteor set-up.
+- `/node_modules`: Exciting third party packages.
 
 ## Getting Up and Running
 
@@ -50,29 +50,16 @@ Once you have cloned the repo, follow these steps to start a local development i
 
 ## The Demo
 
-To get you up and running, I've built a small demo application; "resolutions" - which is a goal setting app, where you can:
+To get you up and running, I've built a small demo application; "resolutions" - which is a goal setting app. You can:
 
-- Create and track personal goals
-- View individual goals
+- Create goals
+- Delete goals
+- View goals
+- Mark goals as done (i.e. update goals)
 
-Only logged in users will be able to see their goals, and logged in users can only see their own goals.
+Only logged in users will be able to see their goals, and logged in users can only see _their_ own goals.
 
-This should give you just enough code to figure out how to implement
-
-## Technologies
-
-This is an opionated stack using technologies I've used in the past to great success, including:
-
-### Application
-
-- **Frontend**: Our frontend is build with React + Apollo-Client + TypeScript
-- **Server**: Our server is built with GraphQL + Apollo + Meteor + TypeScript
-
-### Testing
-
-- **Storybook**: For visual component creation and testing
-- **Jest**: As the base testing library
-- **react-testing-library**: For component-tree testing
+I've tried to keep this code to a minimum; it should give you just enough of an idea of how to set up your own collection and apollo interface, and how to interact with that on the frontend.
 
 ## Deployment
 
