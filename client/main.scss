@@ -1,8 +1,12 @@
 @import './spacers.scss';
 
+$primary: #70e5ea;
+$dark: red;
+
 html {
   font-family: 'Muli', sans-serif;
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
+  color: #0b1436 !important;
 }
 
 h1,
@@ -91,4 +95,23 @@ h6 {
 .no-margin {
   margin-bottom: 0 !important;
   padding: 0 !important;
+}
+
+.footer {
+  background-color: #0b1436;
+}
+
+.button.is-primary {
+  background-color: #70e5ea;
+}
+
+.button.is-primary:hover {
+  background-color: #62b8cc;
+}
+
+.resolution-container {
+  flex-direction: row;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }

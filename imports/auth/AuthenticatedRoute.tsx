@@ -4,9 +4,8 @@ import LoginForm from './LoginForm'
 
 interface Props {
   isUser: boolean
-  component: React.ReactNode
 }
 
-export const AuthenticatedRoute: React.FC<Props> = ({ isUser, component }) => {
-  return <>{!isUser ? <LoginForm /> : <>{component}</>}</>
+export const AuthenticatedRoute: React.FC<Props> = ({ isUser, children }) => {
+  return <>{!isUser ? <LoginForm /> : <>{children}</>}</>
 }

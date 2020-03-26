@@ -15,8 +15,8 @@ export const Header: React.FC<Props> = ({ isUser, logOut }) => {
         <div className="navbar-brand">
           <Link className="navbar-item" to="/">
             <img
-              src="https://bulma.io/images/bulma-logo.png"
-              alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+              src="/logo.png?v=1"
+              alt="Titan: A framework for building web frameworks faster"
               width="112"
               height="28"
             />

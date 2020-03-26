@@ -1,6 +1,6 @@
 import Resolutions from './resolutions'
 
-const isUser = (userId) => {
+const isUser = userId => {
   if (!userId) throw new Error('Unauthorized user')
 }
 
@@ -36,6 +36,8 @@ export default {
   Mutation: {
     createResolution(obj, { name }, { userId }) {
       isUser(userId)
+      if (name.length === 0) throw new Error('Not long enough')
+
       const id = Resolutions.insert({
         name,
         completed: false,

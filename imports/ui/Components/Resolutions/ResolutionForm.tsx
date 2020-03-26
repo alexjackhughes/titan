@@ -8,7 +8,7 @@ export const ResolutionForm: React.FC<Props> = ({ onClick }) => {
   const [value, setValue] = React.useState('')
 
   return (
-    <>
+    <div className="resolution-container">
       <div className="field has-addons is-fullwidth">
         <div className="control has-icons-left has-icons-right">
           <input
@@ -34,6 +34,6 @@ export const ResolutionForm: React.FC<Props> = ({ onClick }) => {
           </a>
         </div>
       </div>
-    </>
+    </div>
   )
 }

@@ -34,7 +34,9 @@ const Routes: React.FC<Props> = ({ loading, user, client }) => {
           client.resetStore()
         }}
       >
-        <AuthenticatedRoute isUser={isUser} component={Resolutions} />
+        <AuthenticatedRoute isUser={isUser}>
+          <Resolutions />
+        </AuthenticatedRoute>
         <Route exact path="/login/:token" component={LoginUserWithToken} />
       </Layout>
     </Switch>

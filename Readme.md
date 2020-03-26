@@ -1,3 +1,5 @@
+![Logo](https://i.imgur.com/debLpdr.png)
+
 # Titan
 
 Titan is an opinionated full-stack web application framework.
