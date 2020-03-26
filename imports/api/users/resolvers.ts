@@ -1,5 +1,14 @@
 import { LoginLinks } from 'meteor/loren:login-links'
 import cryptoRandomString from 'crypto-random-string'
+import { Email } from 'meteor/email'
+
+const createLoginEmail = (token: string): string => {
+  return `
+    This is your magic link! Just click to login:
+
+    ${Meteor.absoluteUrl().replace(/\/$/, '') + '/token/' + token}
+  `
+}
 
 export default {
   Query: {
@@ -20,10 +29,17 @@ export default {
 
       // Then we want to generate a token based on the user
       const token = LoginLinks.generateAccessToken(foundNewOrExistingUser)
-      console.log('token', token)
+
+      // And now, we want to send an email to the user with the token as an email:
+      Email.send({
+        from: 'alex@example.com',
+        to: email,
+        subject: 'Sign in to titan!',
+        text: createLoginEmail(token),
+      })
 
       return {
-        token,
+        token: 'An email with the token has been sent!',
       }
     },
   },
