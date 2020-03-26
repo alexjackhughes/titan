@@ -2,9 +2,30 @@
 
 # Titan
 
-Titan is an opinionated full-stack web application framework.
+Titan is an opinionated full-stack boilerplate framework built with **React** + **Meteor** + **Apollo**.
 
-It attempts to incorporate many of the latest web technologies, whilst handling all the boring bits of building applications for you - so you can focus on, you know, building a startup.
+Titan is built around an idea; Building startups should be _fun_.
+
+As a founder, you want to focus what limited time you have on validating your startup; not creating account systems, or designing APIs, or building infrastructure you are going to outgrow anyway.
+
+Titan gives you the tools to do that.
+
+### Features
+
+Built around TypeScript and Meteor, Titan comes with everything you need to build a well-tested application without having to write the boilerplate.
+
+It gives you the latest tools, like:
+
+- Login & register with a magic link
+- User-restricted routes
+- Minimongo and all the benefits it provides
+- A fully defined example CRUD API built with `apollo-server`
+- `apollo-client` and cache set-up on the frontend
+- The latest React features
+- Airbnb linting
+- Bulma theming set-up
+- Jest for unit tests
+- Storybook for component testing & visualisation
 
 It consists of three main projects:
 
@@ -22,17 +43,15 @@ It consists of three main projects:
 
 Once you have cloned the repo, follow these steps to start a local development instance of the dashboard:
 
-1. Navigate to the root of the directory and run `npm install`
-2. Next run `meteor` - this will install meteor's dependencies and start the app.
-3. There is no step 3 - you're done! 🎉
+1. Run the command `meteor` from root - this will install titan's dependencies and start the app.
+2. There is no step 2 - you're done! 🎉
    - Visit the website: [http://localhost:3000/](http://localhost:3000/)
-   - Write GraphQL queries: [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
+   - Test GraphQL queries: [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
 
 ## The Demo
 
-To give you a brief understanding of the actual demo application, it outlines a "resolutions" app, where you can:
+To get you up and running, I've built a small demo application; "resolutions" - which is a goal setting app, where you can:
 
-- Login via a Magic Link
 - Create and track personal goals
 - View individual goals
 
@@ -57,6 +76,6 @@ This is an opionated stack using technologies I've used in the past to great suc
 
 ## Deployment
 
-Once you’ve built and tested your Titan application, you need to put it online to show it to the world. Titan uses Meteor as it's base framework, so for deployment you can follow along with their guide:
+Thanks to Meteor, deployments are easy - just follow this guide:
 
 [Meteor Deployment Guide](https://guide.meteor.com/deployment.html)
