@@ -1,3 +1,6 @@
+import { LoginLinks } from 'meteor/loren:login-links'
+import cryptoRandomString from 'crypto-random-string'
+
 export default {
   Query: {
     user(obj, args, { user }) {
@@ -6,18 +9,22 @@ export default {
   },
   Mutation: {
     generateToken(obj, { email }, { user }) {
-      console.log('WOO')
-      console.log(email)
+      const foundExistingUser = Accounts.findUserByEmail(email)
 
-      // // find a user first
-      // // const user = Accounts.findUserByEmail(email)
-      // // console.log(user)
+      if (!foundExistingUser) {
+        const password = cryptoRandomString({ length: 20 })
+        Accounts.createUser({ email, password })
+      }
 
-      // // if a user doesn't exist, we want to create a user
+      const foundNewOrExistingUser = foundExistingUser || Accounts.findUserByEmail(email)
 
-      // // Then we want to generate a token based on the user
+      // Then we want to generate a token based on the user
+      const token = LoginLinks.generateAccessToken(foundNewOrExistingUser)
+      console.log('token', token)
 
-      return user || {}
+      return {
+        token,
+      }
     },
   },
   User: {

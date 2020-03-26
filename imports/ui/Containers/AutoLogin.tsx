@@ -5,6 +5,8 @@ import { graphql, withApollo } from 'react-apollo'
 import { compose } from 'recompose'
 
 const AutoLogin = ({ loading, refetch, generateToken }) => {
+  const [hasSubmitted, setSubmitted] = React.useState(false)
+
   if (loading) return null
 
   const submitForm = (email: string) => {
@@ -14,6 +16,7 @@ const AutoLogin = ({ loading, refetch, generateToken }) => {
         email,
       },
     })
+    setSubmitted(true)
   }
 
   return (

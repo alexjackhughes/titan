@@ -3,10 +3,14 @@ type User {
   email: String
 }
 
+type Token {
+  token: String
+}
+
 extend type Query {
   user: User
 }
 
 extend type Mutation {
-  generateToken(email: String!): User
+  generateToken(email: String!): Token
 }

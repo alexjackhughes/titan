@@ -6,6 +6,7 @@ import { withApollo } from 'react-apollo'
 
 import Resolutions from './Containers/Resolutions'
 import AutoLogin from './Containers/AutoLogin'
+import RedirectUser from './Containers/RedirectUser'
 
 import { AuthenticatedRoute } from '../auth/AuthenticatedRoute'
 import { Layout } from './Components/Layout'
@@ -39,6 +40,7 @@ const Routes: React.FC<Props> = ({ loading, user, client }) => {
           <Route exact path="/" component={Resolutions} />
         </AuthenticatedRoute>
         <Route exact path="/login" component={AutoLogin} />
+        <Route exact path="/login/token/:token" component={RedirectUser} />
       </Layout>
     </Switch>
   )
