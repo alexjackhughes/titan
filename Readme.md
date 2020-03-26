@@ -36,8 +36,8 @@ It consists of three main projects:
   - `/ui` Where we write our React code.
 - `/server` Where our server is set-up.
 
-- `/meteor`: Boring meteor set-up.
-- `/node_modules`: Exciting third party packages.
+- `/meteor` Boring meteor set-up.
+- `/node_modules` Exciting third party packages.
 
 ## Getting Up and Running
 

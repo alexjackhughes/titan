@@ -17,6 +17,12 @@ const LoginForm = ({ loading, refetch, generateToken }) => {
     setSubmitted(true)
   }
 
+  const keyPressed = event => {
+    if (event.key === 'Enter') {
+      submitForm(this.email.value)
+    }
+  }
+
   return (
     <>
       {hasSubmitted ? (
@@ -45,6 +51,7 @@ const LoginForm = ({ loading, refetch, generateToken }) => {
                   type="email"
                   placeholder="hello@titan.com"
                   ref={input => (this.email = input)}
+                  onKeyPress={keyPressed}
                 />
                 <span className="icon is-small is-left">
                   <i className="fad fa-envelope-open" />
