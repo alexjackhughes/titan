@@ -6,3 +6,7 @@ type User {
 extend type Query {
   user: User
 }
+
+extend type Mutation {
+  generateToken(email: String!): User
+}

@@ -8,7 +8,7 @@ import UsersResolvers from '../imports/api/users/resolvers'
 import ResolutionsSchema from '../imports/api/resolutions/Resolution.graphql'
 import ResolutionsResolvers from '../imports/api/resolutions/resolvers'
 
-// TODO: ssoss
+// TODO: ssosss ssjs sjs sjsjs sjsjxsn shshshs shshx shsh
 // Here we define data models:
 const typeDefs = [UsersSchema, ResolutionsSchema]
 

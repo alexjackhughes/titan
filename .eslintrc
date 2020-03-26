@@ -47,6 +47,7 @@
         "props": false
       }
     ],
+    "eslint/arrow-parens": ["off"],
     "space-before-function-paren": [
       "error",
       {

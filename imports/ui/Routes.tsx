@@ -5,6 +5,7 @@ import { graphql } from 'react-apollo'
 import { withApollo } from 'react-apollo'
 
 import Resolutions from './Containers/Resolutions'
+import AutoLogin from './Containers/AutoLogin'
 
 import { AuthenticatedRoute } from '../auth/AuthenticatedRoute'
 import { Layout } from './Components/Layout'
@@ -37,6 +38,7 @@ const Routes: React.FC<Props> = ({ loading, user, client }) => {
         <AuthenticatedRoute isUser={isUser} isAuthenticatedRoute={true}>
           <Route exact path="/" component={Resolutions} />
         </AuthenticatedRoute>
+        <Route exact path="/login" component={AutoLogin} />
       </Layout>
     </Switch>
   )
