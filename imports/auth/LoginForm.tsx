@@ -1,22 +1,65 @@
-import React, { Component } from 'react'
+import * as React from 'react'
+import gql from 'graphql-tag'
+import { graphql, withApollo } from 'react-apollo'
+import { compose } from 'recompose'
 
-class LoginForm extends Component {
-  login = (e) => {
-    e.preventDefault()
-    Meteor.loginWithPassword(this.email.value, this.password.value, (error) => {
-      if (!error) this.props.client.resetStore()
+const LoginForm = ({ loading, refetch, generateToken }) => {
+  const [hasSubmitted, setSubmitted] = React.useState(false)
+
+  if (loading) return null
+
+  const submitForm = (email: string) => {
+    generateToken({
+      variables: {
+        email,
+      },
     })
+    setSubmitted(true)
   }
 
-  render() {
-    return (
-      <form onSubmit={this.login}>
-        <input type="email" ref={(input) => (this.email = input)} />
-        <input type="password" ref={(input) => (this.password = input)} />
-        <button type="submit">Login User</button>
-      </form>
-    )
-  }
+  return (
+    <>
+      {hasSubmitted ? (
+        <p>Thanks! Please check your emails</p>
+      ) : (
+        <>
+          <input type="email" ref={input => (this.email = input)} placeholder="hello@example.com" />
+          <button onClick={() => submitForm(this.email.value)}>Send magic link</button>
+        </>
+      )}
+    </>
+  )
 }
 
-export default LoginForm
+const Query = gql`
+  query userLoggedIn {
+    user {
+      _id
+      email
+    }
+  }
+`
+
+const generateToken = gql`
+  mutation generateToken($email: String!) {
+    generateToken(email: $email) {
+      email
+    }
+  }
+`
+
+export default compose(
+  graphql(Query, {
+    props: ({ data }) => {
+      return {
+        ...data,
+      }
+    },
+  }),
+  graphql(generateToken, {
+    name: 'generateToken',
+    options: {
+      refetchQueries: ['userLoggedIn'],
+    },
+  })
+)(withApollo(LoginForm))

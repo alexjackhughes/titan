@@ -5,11 +5,10 @@ import { graphql } from 'react-apollo'
 import { withApollo } from 'react-apollo'
 
 import Resolutions from './Containers/Resolutions'
-import AutoLogin from './Containers/AutoLogin'
-import RedirectUser from './Containers/RedirectUser'
-
-import { AuthenticatedRoute } from '../auth/AuthenticatedRoute'
 import { Layout } from './Components/Layout'
+
+import LoginUserWithToken from '../auth/LoginUserWithToken'
+import { AuthenticatedRoute } from '../auth/AuthenticatedRoute'
 
 interface User {
   _id: string
@@ -39,8 +38,7 @@ const Routes: React.FC<Props> = ({ loading, user, client }) => {
         <AuthenticatedRoute isUser={isUser} isAuthenticatedRoute={true}>
           <Route exact path="/" component={Resolutions} />
         </AuthenticatedRoute>
-        <Route exact path="/login" component={AutoLogin} />
-        <Route exact path="/login/token/:token" component={RedirectUser} />
+        <Route exact path="/token/:token" component={LoginUserWithToken} />
       </Layout>
     </Switch>
   )

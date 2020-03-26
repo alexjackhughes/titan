@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import Login from '../ui/Containers/Login'
+import LoginForm from './LoginForm'
 
 interface Props {
   isUser: boolean
@@ -8,5 +8,5 @@ interface Props {
 }
 
 export const AuthenticatedRoute: React.FC<Props> = ({ isUser, isAuthenticatedRoute, children }) => {
-  return <>{isAuthenticatedRoute && !isUser ? <Login /> : <>{children}</>}</>
+  return <>{isAuthenticatedRoute && !isUser ? <LoginForm /> : <>{children}</>}</>
 }
