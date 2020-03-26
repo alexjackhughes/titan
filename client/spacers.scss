@@ -1,0 +1,40 @@
+$sizeUnit: rem;
+$marginKey: 'has-margin';
+$paddingKey: 'has-padding';
+$separator: '-';
+$sizes: (
+  ('none', 0),
+  ('wee', 0.125),
+  ('tiny', 0.25),
+  ('small', 0.5),
+  ('medium', 1),
+  ('large', 3),
+  ('huge', 4),
+  ('giant', 6)
+);
+$positions: (('top', 'top'), ('right', 'right'), ('bottom', 'bottom'), ('left', 'left'));
+
+@function sizeValue($key, $value) {
+  @return if($key == 'none', 0, $value + $sizeUnit);
+}
+
+@each $size in $sizes {
+  $sizeKey: nth($size, 1);
+  $sizeValue: nth($size, 2);
+  .#{$marginKey}#{$separator}#{$sizeKey} {
+    margin: sizeValue($sizeKey, $sizeValue);
+  }
+  .#{$paddingKey}#{$separator}#{$sizeKey} {
+    padding: sizeValue($sizeKey, $sizeValue);
+  }
+  @each $position in $positions {
+    $posKey: nth($position, 1);
+    $posValue: nth($position, 2);
+    .#{$marginKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+      margin-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+    }
+    .#{$paddingKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+      padding-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+    }
+  }
+}

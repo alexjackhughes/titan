@@ -21,7 +21,6 @@ interface Props {
 }
 
 const Routes: React.FC<Props> = ({ loading, user, client }) => {
-  // in slow apps, this could load a loading screen
   if (loading) return null
 
   const isUser = user && !!user._id
@@ -35,10 +34,8 @@ const Routes: React.FC<Props> = ({ loading, user, client }) => {
           client.resetStore()
         }}
       >
-        <AuthenticatedRoute isUser={isUser} isAuthenticatedRoute={true}>
-          <Route exact path="/" component={Resolutions} />
-        </AuthenticatedRoute>
-        <Route exact path="/token/:token" component={LoginUserWithToken} />
+        <AuthenticatedRoute isUser={isUser} component={Resolutions} />
+        <Route exact path="/login/:token" component={LoginUserWithToken} />
       </Layout>
     </Switch>
   )

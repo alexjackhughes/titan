@@ -9,13 +9,13 @@ export const ResolutionForm: React.FC<Props> = ({ onClick }) => {
 
   return (
     <>
-      <div className="field has-margin-top has-addons is-fullwidth">
+      <div className="field has-addons is-fullwidth">
         <div className="control has-icons-left has-icons-right">
           <input
             className="input"
             type="text"
             placeholder="Learn Spanish..."
-            onChange={(e) => setValue(e.target.value)}
+            onChange={e => setValue(e.target.value)}
             value={value}
           />
           <span className="icon is-small is-left">

@@ -6,7 +6,7 @@ const createLoginEmail = (token: string): string => {
   return `
     This is your magic link! Just click to login:
 
-    ${Meteor.absoluteUrl().replace(/\/$/, '') + '/token/' + token}
+    ${Meteor.absoluteUrl().replace(/\/$/, '') + '/login/' + token}
   `
 }
 
@@ -27,12 +27,10 @@ export default {
 
       const foundNewOrExistingUser = foundExistingUser || Accounts.findUserByEmail(email)
 
-      // Then we want to generate a token based on the user
       const token = LoginLinks.generateAccessToken(foundNewOrExistingUser)
 
-      // And now, we want to send an email to the user with the token as an email:
       Email.send({
-        from: 'alex@example.com',
+        from: 'hello@titan.com',
         to: email,
         subject: 'Sign in to titan!',
         text: createLoginEmail(token),
