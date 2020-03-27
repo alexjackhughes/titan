@@ -4,8 +4,8 @@ import { graphql, withApollo } from 'react-apollo'
 
 import { compose } from 'recompose'
 
-import { ResolutionForm } from '../Components/Resolutions/ResolutionForm'
-import { ResolutionItem } from '../Components/Resolutions/ResolutionItem'
+import { ResolutionForm } from '../components/Resolutions/ResolutionForm'
+import { ResolutionItem } from '../components/Resolutions/ResolutionItem'
 
 const Resolutions = ({
   loading, refetch, createResolution, deleteResolution, completeResolution, resolutions

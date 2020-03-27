@@ -11,7 +11,7 @@ export const Layout: React.FC<Props> = ({ children, isUser, logOut }) => (
   <>
     <Header isUser={isUser} logOut={logOut} />
     <div className="section main has-navbar-fixed-top">
-      <div className="container has-margin-top">{children}</div>
+      <div className="container has-padding-huge">{children}</div>
     </div>
     <Footer />
   </>

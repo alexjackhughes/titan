@@ -9,3 +9,9 @@ function loadStories() {
 }
 
 configure(loadStories, module)
+
+// Set up imports in Storybook
+import '../imports/ui/styles/_variables.scss';
+import '../imports/ui/styles/_spacers.scss';
+import '../node_modules/bulma_scss/bulma.scss';
+import '../imports/ui/styles/index.scss';

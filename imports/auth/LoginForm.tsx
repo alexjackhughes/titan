@@ -41,7 +41,7 @@ const LoginForm = ({ loading, refetch, generateToken }) => {
         <div className="page-container">
           <div className="form-container card has-padding-large">
             <div className="has-margin-bottom-medium has-padding-medium">
-              <h4 className="title is-3 no-margin">Passwords are boring</h4>
+              <h4 className="title is-3 no-spacing">Passwords are boring</h4>
               <p>Get a magic link sent to your email that'll sign you in instantly.</p>
             </div>
             <div className="field">

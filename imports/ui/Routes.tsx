@@ -4,8 +4,8 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import { withApollo } from 'react-apollo'
 
-import Resolutions from './Containers/Resolutions'
-import { Layout } from './Components/Layout'
+import Resolutions from './containers/Resolutions'
+import { Layout } from './components/Layout'
 
 import LoginUserWithToken from '../auth/LoginUserWithToken'
 import { AuthenticatedRoute } from '../auth/AuthenticatedRoute'
