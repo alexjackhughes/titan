@@ -7,9 +7,7 @@ import { compose } from 'recompose'
 import { ResolutionForm } from '../components/Resolutions/ResolutionForm'
 import { ResolutionItem } from '../components/Resolutions/ResolutionItem'
 
-const Resolutions = ({
-  loading, refetch, createResolution, deleteResolution, completeResolution, resolutions
-}) => {
+const Resolutions = ({ loading, refetch, createResolution, deleteResolution, completeResolution, resolutions }) => {
   if (loading) return null
 
   const submitForm = (value: string) => {

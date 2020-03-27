@@ -9,6 +9,9 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
+    "prettier:base": "prettier --parser typescript --single-quote",
+    "prettier:check": "npm run prettier:base -- --list-different \"imports/**/*.{ts,tsx}\"",
+    "prettier:write": "npm run prettier:base -- --write \"imports/**/*.{ts,tsx}\"",
     "build:graphql": "rm -rf ./node_modules/.cache/babel-loader",
     "watch": "watch 'npm run build:graphql' ./imports/api"
   },
@@ -44,7 +47,8 @@
     "style-loader": "^1.0.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.2",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "prettier": "^1.18.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.6",
