@@ -38,7 +38,7 @@ const client = new ApolloClient({
   cache,
 })
 
-export const ApolloApp = () => (
+export const ApolloApp: React.FC = () => (
   <ApolloProvider client={client}>
     <Router>
       <Routes />

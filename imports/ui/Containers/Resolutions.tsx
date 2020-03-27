@@ -10,7 +10,7 @@ import { ResolutionItem } from '../components/Resolutions/ResolutionItem'
 const Resolutions = ({ loading, refetch, createResolution, deleteResolution, completeResolution, resolutions }) => {
   if (loading) return null
 
-  const submitForm = (value: string) => {
+  const submitForm = (value: string): void => {
     createResolution({
       variables: {
         name: value,
@@ -18,7 +18,7 @@ const Resolutions = ({ loading, refetch, createResolution, deleteResolution, com
     })
   }
 
-  const completeGoal = (_id: string, completed: boolean) => {
+  const completeGoal = (_id: string, completed: boolean): void => {
     completeResolution({
       variables: {
         _id,
@@ -27,7 +27,7 @@ const Resolutions = ({ loading, refetch, createResolution, deleteResolution, com
     })
   }
 
-  const deleteGoal = (_id: string) => {
+  const deleteGoal = (_id: string): void => {
     deleteResolution({
       variables: {
         _id,
