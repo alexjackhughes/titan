@@ -1,11 +1,11 @@
 import React from 'react'
 
 interface Props {
-  _id: String
-  name: String
+  _id: string
+  name: string
   completed: boolean
-  onClick: (id: String, completed: boolean) => void
-  onDelete: (id: String) => void
+  onClick: (id: string, completed: boolean) => void
+  onDelete: (id: string) => void
 }
 
 export const ResolutionItem: React.FC<Props> = ({ _id, name, completed, onClick, onDelete }) => (

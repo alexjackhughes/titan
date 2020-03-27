@@ -4,8 +4,8 @@
   "scripts": {
     "dev": "npm run watch && meteor run",
     "start": "npm run watch && meteor run",
-    "lint:ts": "eslint  './**/*.{ts,tsx}'",
-    "lint:fix": "eslint  './**/*.{ts,tsx}' --fix",
+    "lint:ts": "eslint './**/*.{ts,tsx}'",
+    "lint:fix": "eslint './**/*.{ts,tsx}' --fix",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",

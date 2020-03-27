@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface Props {
-  onClick: (value: String) => void
+  onClick: (value: string) => void
 }
 
 export const ResolutionForm: React.FC<Props> = ({ onClick }) => {
