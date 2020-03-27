@@ -18,8 +18,9 @@ It gives you the latest tools, like:
 
 - Login & register with a magic link
 - User-restricted routes
-- Minimongo and all the benefits it provides
-- A fully defined example CRUD API built with `apollo-server`
+- TypeScript everything
+- Fuklly setup local MongoDB storage
+- A fully type-safe example CRUD API built with `apollo-server`
 - `apollo-client` and cache set-up on the frontend
 - The latest React features
 - Airbnb linting

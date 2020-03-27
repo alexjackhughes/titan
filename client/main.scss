@@ -1,6 +1,8 @@
+$primary: #70e5ea;
+
+@import '{}/node_modules/bulma_scss/bulma.scss';
 @import './spacers.scss';
 
-$primary: #70e5ea;
 
 html {
   font-family: 'Muli', sans-serif;
@@ -62,11 +64,6 @@ h6 {
   margin-top: 2rem;
 }
 
-// .sticky {
-//   position: fixed;
-//   bottom: 0;
-//   width: 100%;
-// }
 
 .main {
   min-height: 90vh;
@@ -98,14 +95,6 @@ h6 {
 
 .footer {
   background-color: #0b1436;
-}
-
-.button.is-primary {
-  background-color: #70e5ea;
-}
-
-.button.is-primary:hover {
-  background-color: #62b8cc;
 }
 
 .resolution-container {
