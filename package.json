@@ -49,6 +49,7 @@
   "dependencies": {
     "@babel/runtime": "^7.7.6",
     "@types/graphql": "^14.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
     "apollo-client-preset": "^1.0.8",

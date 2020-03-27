@@ -1,9 +1,4 @@
-// Import any helper styling libraries and variables.
 @import '{}/imports/ui/styles/_variables.scss';
 @import '{}/imports/ui/styles/_spacers.scss';
-
-// Import Bulma after so variables so that they are imported.
 @import '{}/node_modules/bulma_scss/bulma.scss';
-
-// Our custom stlyes applied after Bulma.
 @import '{}/imports/ui/styles/index.scss';
