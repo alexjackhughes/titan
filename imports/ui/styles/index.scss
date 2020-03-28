@@ -24,7 +24,7 @@ html {
     background-color: white;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.05) 0 0 10px, rgba(0, 0, 0, 0.05) 0 1px 4px;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0rem 2rem 0rem;
     padding: 1rem;
   }
   
@@ -49,6 +49,16 @@ html {
   
   .is-pointer {
     cursor: pointer;
+  }
+
+  .is-delete {
+    opacity: 0.3;
+    color: grey;
+  }
+
+  .is-delete:hover {
+    opacity: 1;
+    color: $danger;
   }
   
   .main {

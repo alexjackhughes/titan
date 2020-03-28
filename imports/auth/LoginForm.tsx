@@ -61,7 +61,7 @@ const LoginForm = ({ loading, refetch, generateToken }) => {
                 </span>
               </p>
             </div>
-            <button className="button is-large is-full-width is-primary" onClick={() => submitForm(this.email.value)}>
+            <button className="button is-full-width is-primary" onClick={() => submitForm(this.email.value)}>
               <span className="icon is-medium">
                 <i className="fad fa-hat-wizard" />
               </span>

@@ -1,6 +1,6 @@
 import Resolutions from './resolutions'
 
-const isUser = (userId: string | undefined): void  => {
+const isUser = (userId: string | undefined): void => {
   if (!userId) throw new Error('Unauthorized user')
 }
 
