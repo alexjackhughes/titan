@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 0,
     'react/prop-types': [2, { ignore: ['children'] }],
     '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
   settings: {
     react: {

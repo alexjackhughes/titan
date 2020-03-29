@@ -1,6 +1,7 @@
 import { LoginLinks } from 'meteor/loren:login-links'
 import cryptoRandomString from 'crypto-random-string'
 import { Email } from 'meteor/email'
+import { validateEmail } from '../../utils/validateEmail'
 
 const createLoginEmail = (token: string): string => {
   return `
@@ -18,6 +19,8 @@ export default {
   },
   Mutation: {
     generateToken(obj, { email }, { user }) {
+      if (!validateEmail(email)) throw new Error('Email is not valid')
+
       const foundExistingUser = Accounts.findUserByEmail(email)
 
       if (!foundExistingUser) {
