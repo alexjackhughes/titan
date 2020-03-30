@@ -44,7 +44,7 @@ It consists of three main projects:
 
 Once you have cloned the repo, follow these steps to start a local development instance of the dashboard:
 
-1. Run the command `npm run dev` from root - this will install titan's dependencies, start the app and watch for changes in your files:
+1. Run the command `npm run dev` from root - this will install titan's dependencies, start the app and watch for changes in your files (including GraphQL files!):
 2. There is no step 2 - you're done! 🎉
    - Visit the website: [http://localhost:3000/](http://localhost:3000/)
    - Test GraphQL queries: [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
