@@ -58,6 +58,7 @@ const LoginForm = ({ loading, refetch, generateToken }) => {
                 <input
                   className="input is-medium"
                   type="email"
+                  autoFocus
                   placeholder="hello@titan.com"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
