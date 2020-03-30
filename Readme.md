@@ -1,4 +1,4 @@
-![Logo](https://i.imgur.com/debLpdr.png)
+![Logo](https://github.com/alexjackhughes/titan/blob/master/public/banner.png?raw=true)
 
 # Titan
 
