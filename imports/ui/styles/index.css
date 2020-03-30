@@ -1,25 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:900|Muli&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900|Muli&display=swap");
 html {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   background-color: #f5f5f5;
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
 }
-
 .navbar-burger span {
   height: 2px;
   color: #1b2836;
 }
-
 .card {
   background-color: white;
   border-radius: 12px;
@@ -27,52 +23,42 @@ h6 {
   margin: 2rem 0rem 2rem 0rem;
   padding: 1rem;
 }
-
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.07) 0 0 10px, rgba(0, 0, 0, 0.07) 0 1px 4px;
 }
-
 .center {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .no-spacing {
   margin: 0 !important;
   padding: 0 !important;
 }
-
 .icon {
   margin-right: 1rem;
 }
-
 .is-pointer {
   cursor: pointer;
 }
-
 .is-delete {
   opacity: 0.3;
   color: grey;
 }
-
 .is-delete:hover {
   opacity: 1;
   color: #ff3860;
 }
-
 .main {
   min-height: 90vh;
   margin-bottom: 3vh;
 }
-
 .pages-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .form-container {
   display: flex;
   flex-direction: column;
@@ -80,14 +66,11 @@ h6 {
   max-width: 500px;
   margin: auto;
   margin-top: 10rem;
-
   text-align: center;
 }
-
 .footer {
   background-color: #0b1436;
 }
-
 .resolution-container {
   flex-direction: row;
   margin: auto;

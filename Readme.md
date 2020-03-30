@@ -14,7 +14,7 @@ Titan gives you the tools to do that.
 
 Built around TypeScript and Meteor, Titan comes with everything you need to build a well-tested application without having to write the boilerplate.
 
-It gives you the latest tools, like:
+It gives you some of the latest tools to get started, like:
 
 - Login & register with a magic link
 - User-restricted routes

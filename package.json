@@ -43,12 +43,13 @@
     "eslint-plugin-react": "^7.19.0",
     "fork-ts-checker-webpack-plugin": "^4.1.1",
     "jest": "^25.1.0",
+    "prettier": "^1.18.2",
     "sass-loader": "^8.0.0",
+    "storybook-react-router": "^1.0.8",
     "style-loader": "^1.0.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.2",
-    "watch": "^1.0.2",
-    "prettier": "^1.18.2"
+    "watch": "^1.0.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.9.2",
