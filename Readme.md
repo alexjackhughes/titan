@@ -16,17 +16,14 @@ Built around TypeScript and Meteor, Titan comes with everything you need to buil
 
 It gives you some of the latest tools to get started, like:
 
-- Login & register with a magic link
-- User-restricted routes
-- TypeScript everything
-- Fuklly setup local MongoDB storage
-- A fully type-safe example CRUD API built with `apollo-server`
-- `apollo-client` and cache set-up on the frontend
-- The latest React features
-- Airbnb linting
-- Bulma theming set-up
-- Jest and `react-testing-library` for testing
-- Storybook for component testing & visualisation
+- Apollo + GraphQL set up on the server
+- A demo CRUD goal setting app
+- TypeScript everywhere™
+- Jest + Storybook + ESLint for testing
+- Bulma + SCSS for styling
+- Font Awesome added
+- React-Router set up
+- ✨ Magic Link authentication (think Slack!) ✨
 
 It consists of three main projects:
 
