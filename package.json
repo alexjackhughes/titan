@@ -2,8 +2,8 @@
   "name": "apollo",
   "private": true,
   "scripts": {
-    "dev": "npm run watch && meteor run",
-    "start": "npm run watch && meteor run",
+    "dev": "concurrently --kill-others \"npm run watch\" \"npm run start\"",
+    "start": "meteor run",
     "lint:ts": "eslint './**/*.{ts,tsx}'",
     "lint:fix": "eslint './**/*.{ts,tsx}' --fix",
     "test": "jest",
@@ -12,7 +12,7 @@
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"imports/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"imports/**/*.{ts,tsx}\"",
-    "build:graphql": "rm -rf ./node_modules/.cache/babel-loader",
+    "build:graphql": "echo \"Removing babel cache!\" && rm -rf ./node_modules/.cache/babel-loader",
     "watch": "watch 'npm run build:graphql' ./imports/api"
   },
   "devDependencies": {
@@ -33,6 +33,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
+    "concurrently": "^5.1.0",
     "css-loader": "^3.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
