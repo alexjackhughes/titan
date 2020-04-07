@@ -41,7 +41,7 @@ It consists of three main projects:
 
 Once you have cloned the repo, follow these steps to start a local development instance of the dashboard:
 
-1. Run the command `npm run dev` from root - this will install titan's dependencies, start the app and watch for changes in your files (including GraphQL files!):
+1. Run the command `npm run dev` from root - this will install titan's dependencies, start the app and watch for any changes in your files (including GraphQL files!):
 2. There is no step 2 - you're done! 🎉
    - Visit the website: [http://localhost:3000/](http://localhost:3000/)
    - Test GraphQL queries: [http://localhost:3000/graphiql](http://localhost:3000/graphiql)
@@ -55,7 +55,7 @@ To get you up and running, I've built a small demo application; "resolutions" - 
 - View goals
 - Mark goals as done (i.e. update goals)
 
-Only logged in users will be able to see their goals, and logged in users can only see _their_ own goals.
+Only logged in users will be able to see their goals, and logged in users can only see _their_ own goals. All the routes are authenticated on both the frontend and the backend.
 
 I've tried to keep this code to a minimum; it should give you just enough of an idea of how to set up your own collection and apollo interface, and how to interact with that on the frontend.
 
