@@ -12,8 +12,8 @@
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"imports/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"imports/**/*.{ts,tsx}\"",
-    "build:graphql": "echo \"GraphQL file has changed: Deleting old cached files!\" && rm -rf ./node_modules/.cache/babel-loader",
-    "watch": "watch 'npm run build:graphql' ./imports/api"
+    "build:graphql": "echo \"GraphQL file has changed: Deleting old cached files!\" && npx rimraf ./node_modules/.cache/babel-loader",
+    "watch": "watch \"npm run build:graphql\" ./imports/api"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
